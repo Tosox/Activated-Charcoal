@@ -11,7 +11,7 @@
 ## Installation
 
 * Make sure that [FDDA](https://www.moddb.com/mods/stalker-anomaly/addons/food-drug-and-drinks-animations-reuploaded) and the [Modded Exes](https://github.com/themrdemonized/STALKER-Anomaly-modded-exes) are installed
-* Download the latest release
+* Download the [latest release](https://www.moddb.com/mods/stalker-anomaly/addons/dltx-activated-charcoal)
 * Install the mod preferably with [Mod Organizer](https://github.com/ModOrganizer2/modorganizer/releases/)
 * Open the game and enjoy
 
