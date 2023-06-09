@@ -59,3 +59,9 @@
 
 ## v1.4.2:
 * Added fomod installer
+
+## v1.5.0:
+* Added "Body Health System" Integration
+* Lowered new game loadout item cost
+* Fixed typo
+* Updated fomod installer
