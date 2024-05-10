@@ -12,9 +12,4 @@
 		%c[d_blue] • %c[ui_gray_2] very potent alcohol sobering effect\n
 		</text>
 	</string>
-	<string id="st_drug_charcoal_bhs">
-		<text>\n
-		%c[d_blue] • %c[0,232, 232, 232] post-heals %c[ui_gray_2]T%c[0,232, 232, 232]• %c[ui_gray_2]L%c[0,232, 232, 232]•\n
-		</text>
-	</string>
 </string_table>

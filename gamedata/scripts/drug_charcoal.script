@@ -46,34 +46,6 @@ death_manager.spawn_cosmetics = function(npc, npc_id, npc_comm, npc_rank, visual
 	end
 end
 
--- BHS implementation
-local change_item_description = false
-function implement_bhs()
-	if zzz_player_injuries then
-		zzz_player_injuries.healhelp.drug_charcoal = { torso = 1, rightleg = 1, leftleg = 1 }
-	
-		-- xcvb's BHS rework already adapts the item description automatically
-		if not zzz_player_injuries.BuildHeaderBHS then
-			change_item_description = true
-		end
-	end
-end
-
-ui_item_build_desc_header = ui_item.build_desc_header
-ui_item.build_desc_header = function(obj, sec, str)
-	local _str = ui_item_build_desc_header(obj, sec, str)
-
-	if not change_item_description then
-		return _str
-	end
-
-	if (not obj) or (obj:section() ~= "drug_charcoal") then
-		return _str
-	end
-
-	return _str .. game.translate_string("st_drug_charcoal_bhs")
-end
-
 -- Inject item into new game loadout
 -- Check drug_charcoal_mcm.script
 
@@ -104,5 +76,4 @@ end
 
 function on_game_start()
 	add_recipe()
-    implement_bhs()
 end

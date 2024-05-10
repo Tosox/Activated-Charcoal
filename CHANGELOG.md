@@ -70,7 +70,8 @@
 * Fixed potential FPS issue
 
 ### v1.6.0
-* Updated trader_autoinject dependency
-* Improved compatability for EFP
-* Added Activated charcoal to the stashes loot pool
 * Removed the need of manual patch installation
+* Improved compatability for EFP
+* Added to stashes loot pool
+* Removed BHS implementation (it doesn't fit in my optinion)
+* Updated trader_autoinject dependency
