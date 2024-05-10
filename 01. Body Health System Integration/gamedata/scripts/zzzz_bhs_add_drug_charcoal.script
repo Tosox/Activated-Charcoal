@@ -1,3 +1,0 @@
-if zzz_player_injuries then
-	zzz_player_injuries.healhelp.drug_charcoal = { torso = 1, rightleg = 1, leftleg = 1 }
-end
