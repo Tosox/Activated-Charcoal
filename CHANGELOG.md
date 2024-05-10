@@ -71,7 +71,7 @@
 
 ### v1.6.0
 * Removed the need of manual patch installation
-* Improved compatability for EFP
+* Improved compatibility for EFP
 * Added to stashes loot pool
-* Removed BHS implementation (it doesn't fit in my optinion)
+* Removed BHS implementation (it doesn't fit in my opinion)
 * Updated trader_autoinject dependency
