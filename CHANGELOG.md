@@ -75,3 +75,6 @@
 * Added to stashes loot pool
 * Removed BHS implementation (it doesn't fit in my opinion)
 * Updated trader_autoinject dependency
+
+## v1.6.1
+* Fixed CTD when opening MCM tab
