@@ -55,13 +55,13 @@
 * Optimized code
 
 ### v1.4.1
-* Added "Banjajis Crafting System Improvements" Patch (Thanks Theisgood)
+* Added "Banjajis Crafting System Improvements" patch
 
 ### v1.4.2
 * Added fomod installer
 
 ### v1.5.0
-* Added "Body Health System" Integration
+* Added "Body Health System" integration
 * Lowered new game loadout item cost
 * Fixed typo
 * Updated fomod installer
@@ -73,8 +73,11 @@
 * Removed the need of manual patch installation
 * Improved compatibility for EFP
 * Added to stashes loot pool
-* Removed BHS implementation (it doesn't fit in my opinion)
+* Removed BHS implementation
 * Updated trader_autoinject dependency
 
 ## v1.6.1
 * Fixed CTD when opening MCM tab
+
+## v1.6.2
+* Added to trader inventories of Sakharov and Professor Hermann
