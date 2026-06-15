@@ -15,18 +15,18 @@ Note: If you want to iterate NPC inventory to check for items, fire a time event
 
 find = string.find
 local function t2c(t)
-	if not t then return nil end
-	local ct = game.CTime()
-	ct:set(t.Y,t.M,t.D,t.h,t.m,t.s,t.ms)
-	return ct
+    if not t then return nil end
+    local ct = game.CTime()
+    ct:set(t.Y,t.M,t.D,t.h,t.m,t.s,t.ms)
+    return ct
 end
 
 local function c2t(ct)
-	if not ct then return nil end
-	-- printf('%s, %s',ct,type(ct))
-	local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
-	Y, M, D, h, m, s, ms = ct:get(Y, M, D, h, m, s, ms)
-	return { Y=Y, M=M, D=D, h=h, m=m, s=s, ms=ms }
+    if not ct then return nil end
+    -- printf('%s, %s',ct,type(ct))
+    local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
+    Y, M, D, h, m, s, ms = ct:get(Y, M, D, h, m, s, ms)
+    return { Y=Y, M=M, D=D, h=h, m=m, s=s, ms=ms }
 end
 
 local furniture = {
@@ -52,10 +52,10 @@ function trade_manager.update(npc, force_refresh)
     TraderUpdate(npc, force_refresh)
     local restock_time = game_difficulties.get_eco_factor("restock") or 24
     if force_refresh then restock_time = 0 end
-	if reup_time and game.get_game_time():diffSec(t2c(reup_time)) < (restock_time * 3600)  then
-		-- print_dbg("Not time to resupply yet!")
+    if reup_time and game.get_game_time():diffSec(t2c(reup_time)) < (restock_time * 3600)  then
+        -- print_dbg("Not time to resupply yet!")
         return
-	end
+    end
     disable_info("sleep_active")
     CreateTimeEvent("custom_update"..npc:id(), "custom_resupply"..npc:id(), 0.1, timed_update, npc)
 end
@@ -118,13 +118,13 @@ function supply_level(npc, as_number)
     -- printf("Profile is %s", profile)
     local config = trade_manager.get_trade_cfg(profile)    
     if not config then return end
-	local str = config:r_string_ex("trader", "buy_supplies")
-	if not (str) then 
-		return -- no buy_supplies this is normal
-	end
+    local str = config:r_string_ex("trader", "buy_supplies")
+    if not (str) then 
+        return -- no buy_supplies this is normal
+    end
 
-	local condlist = xr_logic.parse_condlist(npc, "trader", "buy_supplies", str)
-	str = condlist and xr_logic.pick_section_from_condlist(db.actor, npc, condlist)
+    local condlist = xr_logic.parse_condlist(npc, "trader", "buy_supplies", str)
+    str = condlist and xr_logic.pick_section_from_condlist(db.actor, npc, condlist)
     if as_number then
         local num = str_explode(str, "_")
         return tonumber(num[2])
@@ -157,19 +157,19 @@ end
 -- author: HarukaSai
 function get_real_community(npc, default)
 
-	if furniture[npc:name()] then
-		return "stalker"
-	end
-	local community = character_community(npc)
-	if not blacklisted_comms[community] then
-		return community
-	end
-	local squad_community = get_object_squad(npc):get_squad_community()
-	if not blacklisted_comms[squad_community] then
-		return squad_community
-	else
-		return default
-	end
+    if furniture[npc:name()] then
+        return "stalker"
+    end
+    local community = character_community(npc)
+    if not blacklisted_comms[community] then
+        return community
+    end
+    local squad_community = get_object_squad(npc):get_squad_community()
+    if not blacklisted_comms[squad_community] then
+        return squad_community
+    else
+        return default
+    end
 end
 
 
@@ -183,13 +183,13 @@ function spawn_items(npc, to_spawn, check_existing)
     local supply_table = {}
     copy_table(supply_table, to_spawn)
     if check_existing then
-		local function itr_inv(temp, item)
-			if supply_table[item:section()] and supply_table[item:section()] > 0 then
-				-- printf("Found 1 of %s", item:section())
+        local function itr_inv(temp, item)
+            if supply_table[item:section()] and supply_table[item:section()] > 0 then
+                -- printf("Found 1 of %s", item:section())
                 supply_table[item:section()] = supply_table[item:section()] - 1
-			end
-		end
-		npc:iterate_inventory(itr_inv)
+            end
+        end
+        npc:iterate_inventory(itr_inv)
     end
     
     for k,v in pairs(supply_table) do
