@@ -3,7 +3,7 @@
     Addon        : Activated Charcoal
     Link:        : https://www.moddb.com/mods/stalker-anomaly/addons/dltx-activated-charcoal/
     Author       : Tosox
-    Last Edit    : 10.10.2025
+    Last Edit    : 23.11.2026
     =====================================================================
 --]]
 
@@ -16,6 +16,12 @@ ADDITIONAL_TRADERS = {
 trader_autoinject_update = trader_autoinject.update
 trader_autoinject.update = function(npc)
     trader_autoinject_update(npc)
+
+    -- Restock runs from a delayed time event, the passed object may be destroyed by now
+    npc = level.object_by_id(npc:id())
+    if not npc then
+        return
+    end
 
     local is_possible_seller = trader_autoinject.get_trader_type(npc) == trader_autoinject.MEDIC
     is_possible_seller = is_possible_seller or ADDITIONAL_TRADERS[npc:section()]

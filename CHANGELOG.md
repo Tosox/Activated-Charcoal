@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.6.3
+* Fixed "Accessing destroyed object" error on trader restock after level transitions
+
 ## v1.6.2
 * Added to trader inventories of Sakharov and Professor Hermann
 
